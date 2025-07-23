@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // ✅ Changed here
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './i18n/config';
@@ -14,8 +14,7 @@ import { useScrollToTop } from './hooks/useScrollToTop';
 import { useLoadingNavigation } from './hooks/useLoadingNavigation';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
-// Add lazy imports for all pages
+// Lazy imports
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Products = lazy(() => import('./pages/Products'));
@@ -29,18 +28,15 @@ const Sculptures = lazy(() => import('./pages/products/Sculptures'));
 const Ceramics = lazy(() => import('./pages/products/Ceramics'));
 const Admin = lazy(() => import('./pages/Admin'));
 
-// Component that uses the scroll to top hook inside Router context
 const AppContent: React.FC = () => {
-  // Scroll to top on route changes
   useScrollToTop();
-  // Enable loading during navigation
   useLoadingNavigation();
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <Suspense fallback={<div style={{textAlign: 'center', marginTop: '4rem'}}>Loading...</div>}>
+        <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '4rem' }}>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -57,11 +53,12 @@ const AppContent: React.FC = () => {
         </Suspense>
       </main>
       <Footer />
+
       {/* Global SpeedDial */}
       <Box sx={{ position: 'fixed', bottom: 32, right: 32, zIndex: 1300 }}>
         <SpeedDial
-          icon={<WorkIcon sx={{ color: 'var(--secondary-main)' , backgroundColor: 'transparent'}} />}
-          sx={{backgroundColor: 'transparent'}}
+          icon={<WorkIcon sx={{ color: 'var(--secondary-main)', backgroundColor: 'transparent' }} />}
+          sx={{ backgroundColor: 'transparent' }}
           ariaLabel="Share on social media"
           FabProps={{
             sx: {
