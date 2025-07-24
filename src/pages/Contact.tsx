@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                       wordBreak: 'break-word'
                     }}
                   >
-                    {t('contacts.phone')}
+                    +9949209747
                   </Typography>
                 </Box>
                 <Box sx={{ 

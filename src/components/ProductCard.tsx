@@ -66,6 +66,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           sx={{
             objectFit: 'cover',
             transition: 'transform 0.3s ease-in-out',
+            margin:'10px' ,
             '&:hover': {
               transform: 'scale(1.05)',
             },

@@ -2,19 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link as RouterLink } from 'react-router-dom';
 import { Product } from '../types/product';
 import products from '../data/products';
-import { Box, Container, Grid, Typography, Button, Card, CardMedia, Chip, Divider, IconButton, Paper, Tooltip, Stack } from '@mui/material';
+import { Box, Container, Grid, Typography, Button, Card, CardMedia, Chip, Divider, Paper, Stack } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CategoryIcon from '@mui/icons-material/Category';
 import StraightenIcon from '@mui/icons-material/Straighten';
 import PersonIcon from '@mui/icons-material/Person';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import { useTranslation } from 'react-i18next';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
   const [selectedImage, setSelectedImage] = useState<string>('');
+  const { t } = useTranslation();
 
   useEffect(() => {
     const foundProduct = products.find((p) => p.id === id);
@@ -27,10 +29,10 @@ const ProductDetail: React.FC = () => {
       <Box minHeight="80vh" display="flex" alignItems="center" justifyContent="center" bgcolor="#f9f6f2">
         <Paper elevation={3} sx={{ p: 6, textAlign: 'center' }}>
           <Typography variant="h5" color="error" gutterBottom>
-            Product not found
+            {t('products.notFound', 'Product not found')}
           </Typography>
           <Button variant="contained" color="primary" component={RouterLink} to="/products" startIcon={<ArrowBackIcon />}>
-            Back to Products
+            {t('products.backToProducts', 'Back to Products')}
           </Button>
         </Paper>
       </Box>
@@ -57,11 +59,11 @@ const ProductDetail: React.FC = () => {
         <Button
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate(-1)}
-          sx={{ mb: 4 , color: 'var(--main)', borderColor: 'var(--main)' }}
+          sx={{ mb: 4 , color: 'var(--secondary-main)', borderColor: 'var(--secondary-main)' }}
           variant="outlined"
         >
-          Back
-        </Button>
+  {t('products.back', 'Back')}
+          </Button>
         <Card sx={{
     borderRadius: 4,
     p: { xs: 2, md: 4 },
@@ -88,48 +90,39 @@ const ProductDetail: React.FC = () => {
             {/* Info Section */}
             <Grid item xs={12} md={6}>
               <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', color: 'var(--secondary-main)' }}>
-                <Stack direction="row" spacing={1} alignItems="center" mb={2}>
-                  <Chip
-                    icon={<CategoryIcon />}
-                    label={product.category.replace('-', ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())}
-                    sx={{ background: 'var(--secondary-main)', color: 'white', fontWeight: 600, fontSize: '1rem' }}
-                  />
-                </Stack>
-                <Typography variant="h4" fontWeight={700} gutterBottom>
-                  {product.title}
-                </Typography>
+       <Stack direction="row" spacing={1} alignItems="center" mb={1}>
+  <MonetizationOnIcon sx={{ color: 'var(--secondary-main)' }} />
+  <Typography variant="h5" fontWeight={600}>
+    ₼{product.price.toLocaleString()}
+  </Typography>
+</Stack>
+<Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
+<Stack direction="row" spacing={1} alignItems="center" mb={1}>
+  <PersonIcon sx={{ color: 'var(--secondary-main)' }} />
+  <Typography variant="body1">
+    <b>{t('product.artist', 'Artist')}:</b> {product.artist || t('products.notAvailable', 'N/A')}
+  </Typography>
+</Stack>
+<Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
+<Stack direction="row" spacing={1} alignItems="center" mb={1}>
+  <CalendarTodayIcon sx={{ color: 'var(--secondary-main)' }} />
+  <Typography variant="body1">
+    <b>{t('product.year', 'Year')}:</b> {product.year}
+  </Typography>
+</Stack>
+<Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
+<Stack direction="row" spacing={1} alignItems="center" mb={1}>
+  <StraightenIcon sx={{ color: 'var(--secondary-main)' }} />
+  <Typography variant="body1">
+    <b>{t('product.dimensions', 'Dimensions')}:</b> {product.dimensions && product.dimensions.trim() !== '' ? product.dimensions : t('products.notAvailable', 'N/A')}
+  </Typography>
+</Stack>
                 <Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
-                <Stack direction="row" spacing={1} alignItems="center" mb={1}>
-                  <MonetizationOnIcon color="primary" />
-                  <Typography variant="h5" fontWeight={600}>
-                    ₼{product.price.toLocaleString()}
-                  </Typography>
-                </Stack>
-                <Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
-                <Stack direction="row" spacing={1} alignItems="center" mb={1}>
-                  <PersonIcon color="action" />
-                  <Typography variant="body1">
-                    <b>Artist:</b> {product.artist || 'N/A'}
-                  </Typography>
-                </Stack>
-                <Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
-                <Stack direction="row" spacing={1} alignItems="center" mb={1}>
-                  <CalendarTodayIcon color="action" />
-                  <Typography variant="body1">
-                    <b>Year:</b> {product.year}
-                  </Typography>
-                </Stack>
-                <Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
-                <Stack direction="row" spacing={1} alignItems="center" mb={1}>
-                  <StraightenIcon color="action" />
-                  <Typography variant="body1">
-                    <b>Dimensions:</b> {product.dimensions && product.dimensions.trim() !== '' ? product.dimensions : 'N/A'}
-                  </Typography>
-                </Stack>
-                <Divider sx={{ my: 1, borderColor: 'var(--secondary-main)' }} />
-                <Typography variant="body1" sx={{ mb: 2 }}>
-                  {product.description || <span style={{ color: '#bbb' }}>No description available.</span>}
-                </Typography>
+<Typography variant="body1" sx={{ mb: 2 }}>
+  {product.description
+    ? t(`products.${product.id}.description`, product.description)
+    : <span style={{ color: 'var(--secondary-main)' }}>{t('products.noDescription', 'Təsvir yoxdur')}</span>}
+</Typography>
                 
               </Box>
             </Grid>

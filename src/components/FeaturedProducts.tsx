@@ -101,7 +101,7 @@ const FeaturedProducts: React.FC = () => {
           <Splide
             options={{
               type: 'loop',
-              perPage: Math.min(3, featuredProducts.length),
+              perPage: Math.min(4, featuredProducts.length),
               gap: '2rem',
               autoplay: true,
               pauseOnHover: true,

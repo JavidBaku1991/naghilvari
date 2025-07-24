@@ -139,6 +139,7 @@ const Home: React.FC = () => {
         minHeight: '100vh',
         paddingTop: '100px',
         backgroundImage: `url(${homeBg})`,
+        boxShadow: 'inset 1px 63px 7px 0px rgba(255, 255, 255, 0.9)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

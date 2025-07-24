@@ -59,7 +59,10 @@
       "priceRange": "Qiymət Aralığı",
       "search": "Axtar",
       "searchPlaceholder": "Məhsulları axtar...",
-      "reset": "Filtrləri sıfırla"
+      "reset": "Filtrləri sıfırla",
+      "backToProducts": "Məhsullara qayıt",
+      "back": "Geri",
+      "noDescription": "Təsvir yoxdur"
     },
    
     "noProducts": "Axtarış kriteriyalarınıza uyğun məhsul tapılmadı",
