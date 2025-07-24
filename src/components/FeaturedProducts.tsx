@@ -47,7 +47,7 @@ const FeaturedProducts: React.FC = () => {
     <Box 
       className="featured-products-section"
       sx={{
-        padding: '2rem 2rem',
+        padding: '1rem 0.5rem',
         backgroundColor: '#f8f9fa',
         opacity: 1, // Always visible for debug
         transition: 'opacity 0.5s ease-out',
@@ -62,7 +62,7 @@ const FeaturedProducts: React.FC = () => {
         <div style={{ textAlign: 'center', marginBottom: '3rem', color: 'white' }}>
           <h3 style={{
             fontSize: '2.5rem',
-            color: 'white',
+            color: 'var(--secondary-main)',
             marginBottom: '1rem',
             fontWeight: 600,
             position: 'relative',
@@ -81,7 +81,7 @@ const FeaturedProducts: React.FC = () => {
             }} />
           </h3>
           <p style={{
-            color: 'white',
+            color: 'var(--secondary-main)',
             fontSize: '1.1rem',
             maxWidth: '600px',
             margin: '1rem auto 0',
@@ -102,7 +102,7 @@ const FeaturedProducts: React.FC = () => {
             options={{
               type: 'loop',
               perPage: Math.min(4, featuredProducts.length),
-              gap: '2rem',
+              gap: '1rem',
               autoplay: true,
               pauseOnHover: true,
               arrows: true,
@@ -122,7 +122,8 @@ const FeaturedProducts: React.FC = () => {
                   opacity: isVisible ? 1 : 0,
                   transition: `transform 0.5s ease-out ${index * 0.2}s, opacity 0.5s ease-out ${index * 0.2}s`,
                   display: 'flex',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  padding: '0px',
                 }}>
                   <ProductCard product={product} />
                 </div>

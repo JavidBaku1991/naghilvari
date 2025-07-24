@@ -59,14 +59,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleProductClick}>
         <CardMedia
           component="img"
-          height="200"
+          height="170"
           image={imageUrl}
           alt={title}
           onError={handleImageError}
           sx={{
             objectFit: 'cover',
             transition: 'transform 0.3s ease-in-out',
-            margin:'10px' ,
+            justifyContent: 'center',
+            alignItems: 'center',
             '&:hover': {
               transform: 'scale(1.05)',
             },
