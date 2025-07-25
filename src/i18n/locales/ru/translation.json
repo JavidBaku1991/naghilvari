@@ -240,4 +240,8 @@
     "of": "из",
     "items": "элементов"
   }
+  ,
+    "featuredProducts": {
+    "viewAll": "Посмотреть все"
+  }
 } 

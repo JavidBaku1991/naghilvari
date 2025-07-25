@@ -9,8 +9,8 @@ import {
 } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import heroImg from '../images/hero.jpeg';
 import { Product } from '../types/product';
+import hero from '../images/hero.jpg'; // Fallback image
 
 interface ProductCardProps {
   product: Product;
@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   // Function to handle image loading errors
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = heroImg; // Fallback image
+    e.currentTarget.src = hero; // Fallback image
   };
 
   const handleProductClick = (e: React.MouseEvent) => {

@@ -8,7 +8,6 @@ import footerImg from '../images/footer.jpg';
 import homeBg from '../images/hero.jpg';
 import ceramics from '../images/categories/ceramics.jpg';
 import heroRight from '../images/hero14.png';
-import hero1Img from '../images/hero1.jpg';
 import hero2Img from '../images/hero2.png';
 import bghero from '../images/hero13.png';
 import sculptures from '../images/categories/sculptures.jpg';
@@ -53,7 +52,7 @@ const Home: React.FC = () => {
 
   // List all images to preload
   const imagesToPreload = [
-    homeBg, hero1Img, hero2Img, footerImg, bghero, categoriesImg, ceramics
+    homeBg, hero2Img, footerImg, bghero, categoriesImg, ceramics
   ];
   categories.forEach(cat => cat.images.forEach(img => imagesToPreload.push(img.src)));
 

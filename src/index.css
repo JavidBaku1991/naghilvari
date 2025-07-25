@@ -7,6 +7,12 @@ body, html, #root {
    margin: 0;
 }
 
+
+.glass{
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(167, 168, 188, 0.37);
+}
 /* Optionally, override MUI typography */
 * {
   font-family: 'Playfair Display', serif !important;

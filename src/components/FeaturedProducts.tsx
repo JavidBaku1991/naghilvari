@@ -45,14 +45,13 @@ const FeaturedProducts: React.FC = () => {
 
   return (
     <Box 
-      className="featured-products-section"
+      className="featured-products-section glass"
       sx={{
         padding: '1rem 0.5rem',
-        backgroundColor: '#f8f9fa',
         opacity: 1, // Always visible for debug
         transition: 'opacity 0.5s ease-out',
+        
         borderRadius: '20px',
-        backgroundImage: `url(${featured})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
