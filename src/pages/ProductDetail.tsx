@@ -48,7 +48,7 @@ const ProductDetail: React.FC = () => {
         minHeight: 'calc(100vh - 64px)',
         py: 8,
         position: 'relative',
-        backgroundImage: `linear-gradient(rgba(30,30,30,0.7), rgba(30,30,30,0.7)), url(${selectedImage})`,
+        backgroundImage: `linear-gradient(rgba(60, 48, 48, 0.7), rgba(117, 107, 107, 0.7)), url(${selectedImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

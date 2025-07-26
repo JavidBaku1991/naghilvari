@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Card 
       sx={{ 
-        height: '100%',
+        height: '450px',
         display: 'flex',
         flexDirection: 'column',
         transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
@@ -53,7 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         overflow: 'hidden',
         backgroundColor: 'var(--secondary-main)',
         width: '100%',
-        maxWidth: '300px'
+        maxWidth: '300px',
       }}
     >
       <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleProductClick}>
