@@ -55,7 +55,7 @@ const products: Product[] = [
     price: 400,
     imageUrl: quslar,
     category: "paintings",
-    featured: true,
+    featured: false,
     artist: "Hüseyn Hacıyev",
     year: 2017,
     dimensions: "44.5:36"
@@ -67,7 +67,7 @@ const products: Product[] = [
     price: 250,
     imageUrl: at,
     category: "paintings",
-    featured: true,
+    featured: false,
     artist: "Hüseyn Hacıyev",
     year: 2014,
     dimensions: "30:27"
@@ -79,7 +79,7 @@ const products: Product[] = [
     price: 400,
     imageUrl: cengcalan,
     category: "paintings",
-    featured: true,
+    featured: false,
     artist: "Hüseyn Hacıyev",
     year: 2015,
     dimensions: "48:23.5"
@@ -91,7 +91,7 @@ const products: Product[] = [
     price: 400,
     imageUrl: skripkaliqiz,
     category: "paintings",
-    featured: true,
+    featured: false,
     artist: "Hüseyn Hacıyev",
     year: 2019,
     dimensions: "34.5:29.5"
@@ -115,7 +115,7 @@ const products: Product[] = [
     price: 800,
     imageUrl: ipekyolu,
     category: "paintings",
-    featured: true,
+    featured: false,
     artist: "",
     year: 2015,
     dimensions: "78.6:30"
