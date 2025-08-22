@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   CardContent,
-  CardMedia,
   Typography,
   Box,
   Chip
@@ -11,6 +10,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Product } from '../types/product';
 import hero from '../images/hero.jpg'; // Fallback image
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface ProductCardProps {
   product: Product;
@@ -21,14 +21,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  // Function to handle image loading errors
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = hero; // Fallback image
+    e.currentTarget.src = hero;
   };
 
   const handleProductClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Navigate to product detail and scroll to top
     navigate(`/product/${id}`);
     window.scrollTo({
       top: 0,
@@ -40,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Card 
       sx={{ 
-        height: '450px',
+        height: '500px',
         display: 'flex',
         flexDirection: 'column',
         transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
@@ -57,24 +55,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       }}
     >
       <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleProductClick}>
-        <CardMedia
-          component="img"
-          height="170"
-          image={imageUrl}
-          alt={title}
-          onError={handleImageError}
-          sx={{
-            objectFit: 'cover',
-            transition: 'transform 0.3s ease-in-out',
-            justifyContent: 'center',
-            alignItems: 'center',
-            '&:hover': {
-              transform: 'scale(1.05)',
-            },
-            width: '100%',
-            height: '200px'
-          }}
-        />
+        <Box sx={{ width: '100%', height: 250, overflow: 'hidden', borderRadius: '8px' }}>
+          <LazyLoadImage
+            src={imageUrl}
+            alt={title}
+            effect="blur"
+            width="100%"
+            height={250}
+            style={{ objectFit: 'cover', borderRadius: '8px', width: '100%', height: '100%' }}
+            onError={handleImageError}
+          />
+        </Box>
         <CardContent sx={{ flexGrow: 1, p: 2 }}>
           <Box sx={{ mb: 1 }}>
             <Chip 
