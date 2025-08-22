@@ -27,6 +27,16 @@ import yumruBaliqlar from '../images/categories/paintings/huseyn/yumru baliqlar.
 import sahIsmayil from '../images/categories/paintings/huseyn/sahismayil.jpeg';
 import cetirli from '../images/categories/paintings/huseyn/cetirli.jpeg';
 
+import gedek from '../images/categories/paintings/huseyn/gedek.jpg';
+import genclerin from '../images/categories/paintings/huseyn/genclerin.jpg';
+import goyercinler from '../images/categories/paintings/huseyn/goyercinler.jpg';
+import heyvalar from '../images/categories/paintings/huseyn/heyvalar.jpg';
+import kvartet from '../images/categories/paintings/huseyn/kvartet.jpg';
+import payiz from '../images/categories/paintings/huseyn/payiz.jpg';
+import reqs from '../images/categories/paintings/huseyn/reqs.jpg';
+import sahismayil from '../images/categories/paintings/huseyn/sahismayil.jpg';
+import sahmeclisi from '../images/categories/paintings/huseyn/sahmeclisi.jpg';
+
 
 
 const products: Product[] = [
@@ -110,7 +120,7 @@ const products: Product[] = [
     imageUrl: sariBaliq,
     category: "paintings",
     featured: true,
-    artist: "",
+    artist: "Hüseyn Hacıyev",
     year: 2023,
     dimensions: ""
   },
@@ -215,7 +225,7 @@ const products: Product[] = [
     title: "Çətirli qız",
     description: "Miniatürlü qrafika",
     price:0,
-    imageUrl: sahIsmayil,
+    imageUrl: cetirli,
     category: "paintings",
     featured: true,
     artist: "Hüseyn Hacıyev",
@@ -230,7 +240,7 @@ const products: Product[] = [
     imageUrl: sahzade,
     category: "paintings",
     featured: true,
-    artist: "",
+    artist: "Hüseyn Hacıyev",
     year: 2023,
     dimensions: "71:58",
     images: [sahzade]
@@ -243,7 +253,7 @@ const products: Product[] = [
     imageUrl: guller,
     category: "paintings",
     featured: true,
-    artist: "",
+    artist: "Hüseyn Hacıyev",
     year: 2023,
     dimensions: "55:48",
     images: [guller]
@@ -256,7 +266,7 @@ const products: Product[] = [
     imageUrl: gunebaxa,
     category: "paintings",
     featured: true,
-    artist: "",
+    artist: "Hüseyn Hacıyev",
     year: 2023,
     dimensions: "",
     images: [gunebaxa]
@@ -269,7 +279,7 @@ const products: Product[] = [
     imageUrl: karvan,
     category: "paintings",
     featured: true,
-    artist: "",
+    artist: "Hüseyn Hacıyev",
     year: 2023,
     dimensions: "27:60",
     images: [karvan]
@@ -299,6 +309,132 @@ const products: Product[] = [
     year: 2023,
     dimensions: "45:42",
     images: [baliqci]
+  }
+  ,
+  {
+    id: "8",
+    title: "Gedək üzü küləyə",
+    description: "",
+    price: 0,
+    imageUrl: gedek,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2018,
+    dimensions: "54:49",
+    images: [gedek]
+  }
+  ,
+  {
+    id: "9",
+    title: "Gənclərin musiqi məclisi",
+    description: "təbii rəng ,akvarel,kağız",
+    price: 12000,
+    imageUrl: genclerin,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2018,
+    dimensions: "35:40",
+    images: [genclerin]
+  }
+  ,
+  {
+    id: "10",
+    title: "Göyərçinlər",
+    description: "",
+    price: 250,
+    imageUrl: goyercinler,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2005,
+    dimensions: "65:60",
+    images: [goyercinler]
+  }
+  ,
+  {
+    id: "11",
+    title: "Heyva toplusu",
+    description: "kətan, yağlı boya",
+    price: 0,
+    imageUrl: heyvalar,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2021,
+    dimensions: "70:65",
+    images: [heyvalar]
+  }
+  ,
+  {
+    id: "12",
+    title: "XVII əsrin kvarteti",
+    description: "akvarel ,qələm, kağız, təbii rəng",
+    price: 8000,
+    imageUrl: kvartet,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2015,
+    dimensions: "44.5:52",
+    images: [kvartet]
+  }
+  ,
+  {
+    id: "13",
+    title: "Payız",
+    description: "karton, yağlı boya",
+    price: 150,
+    imageUrl: payiz,
+    category: "paintings",
+    featured: false,
+    artist: "Hüseyn Hacıyev",
+    year: 2015,
+    dimensions: "",
+    images: [payiz]
+  }
+  ,
+  {
+    id: "14",
+    title: "Rəqs",
+    description: "qrafika",
+    price: 250,
+    imageUrl: reqs,
+    category: "paintings",
+    featured: false,
+    artist: "Hüseyn Hacıyev",
+    year: 2018,
+    dimensions: "43.5:35",
+    images: [reqs]
+  }
+  ,
+  {
+    id: "15",
+    title: "Şah Məclisi ",
+    description: "kağız, qələm, təbii rəng, akvarel",
+    price: 12000,
+    imageUrl: sahIsmayil,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2014-2015,
+    dimensions: "47.5:71",
+    images: [sahIsmayil]
+  }
+  ,
+  {
+    id: "16",
+    title: "Şah İsmayıl",
+    description: "kağız, qələm,  akvarel",
+    price: 12000,
+    imageUrl: sahmeclisi,
+    category: "paintings",
+    featured: true,
+    artist: "Hüseyn Hacıyev",
+    year: 2006,
+    dimensions: "70:52",
+    images: [sahmeclisi]
   }
 ];
 
