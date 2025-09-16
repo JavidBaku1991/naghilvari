@@ -44,10 +44,9 @@ const Navbar: React.FC = () => {
   ];
 
   const productCategories = [
-    { label: t('nav.products'), path: '/products' },
     { label: t('categories.paintings.title'), path: '/products/paintings' },
     { label: t('categories.sculptures.title'), path: '/products/sculptures' },
-    { label: t('categories.ceramics.title'), path: '/products/ceramics' }
+    { label: t('categories.mozaics.title'), path: '/products/mozaics' }
   ];
 
   useEffect(() => {
@@ -61,7 +60,6 @@ const Navbar: React.FC = () => {
 
   const handleNavigation = (path: string) => {
     navigate(path);
-    // Scroll to top when navigating
     window.scrollTo({
       top: 0,
       left: 0,
@@ -74,7 +72,6 @@ const Navbar: React.FC = () => {
     if (searchQuery.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
-      // Scroll to top after search navigation
       window.scrollTo({
         top: 0,
         left: 0,

@@ -12,6 +12,7 @@ import hero2Img from '../images/hero2.png';
 import bghero from '../images/hero13.png';
 import sculptures from '../images/categories/sculptures.jpg';
 import paintings from '../images/categories/paintings.jpg';
+import mozaiks from '../images/categories/mozaik.jpg';
 import { Box, Container, Typography } from '@mui/material';
 import categoriesImg from '../images/hero.jpg';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -33,6 +34,12 @@ const Home: React.FC = () => {
       images: [ paintings].map((src, i) => ({ src, alt: `Painting ${i + 1}` })),
       path: '/products/paintings'
     },
+     {
+    title: t('categories.mozaics.title'),
+    description: t('categories.mozaics.description'),
+    images: [mozaiks].map((src, i) => ({ src, alt: `Mozaiks ${i + 1}` })),
+    path: '/products/mozaics'
+  },
     {
       title: t('categories.sculptures.title'),
       description: t('categories.sculptures.description'),
@@ -40,12 +47,7 @@ const Home: React.FC = () => {
       path: '/products/sculptures'
     },
 
-    {
-      title: t('categories.ceramics.title'),
-      description: t('categories.ceramics.description'),
-      images: [ceramics].map((src, i) => ({ src, alt: `Ceramics ${i + 1}` })),
-      path: '/products/ceramics'
-    }
+   
   ];
 
 

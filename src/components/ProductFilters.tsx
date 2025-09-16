@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import {
   Box,
   TextField,
@@ -17,6 +17,7 @@ import {
 import FilterListIcon from '@mui/icons-material/FilterList';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 interface ProductFiltersProps {
   searchQuery: string;
@@ -36,16 +37,18 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
   onSearchChange,
   sortBy,
   onSortChange,
-  priceRange,
   onPriceChange,
   onResetFilters,
   filterOpen,
   onFilterOpenChange,
-  maxPrice = 1000
+  maxPrice = 20000
 }) => {
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
+
 
   const FilterContent = () => (
     <Box sx={{ 
@@ -140,7 +143,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
         onChange={onPriceChange}
         valueLabelDisplay="auto"
         min={0}
-        max={maxPrice}
+        max={20000}
         sx={{ 
           mb: 3,
           '& .MuiSlider-track': {
@@ -222,4 +225,4 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
   );
 };
 
-export default ProductFilters; 
+export default ProductFilters;

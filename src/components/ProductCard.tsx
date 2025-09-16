@@ -51,7 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         overflow: 'hidden',
         backgroundColor: 'var(--secondary-main)',
         width: '100%',
-        maxWidth: '300px',
+        maxWidth: '300px'
       }}
     >
       <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleProductClick}>
@@ -62,7 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             effect="blur"
             width="100%"
             height={250}
-            style={{ objectFit: 'cover', borderRadius: '8px', width: '100%', height: '100%' }}
+            style={{ objectFit: 'cover', borderRadius: '8px', width: '85%', height: '100%', padding: '20px' }}
             onError={handleImageError}
           />
         </Box>

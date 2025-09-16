@@ -26,17 +26,9 @@
       "title": "Heykəltəraşlıq",
       "description": "Əl işi heykəltəraşlıq əsərlərimizi kəşf edin"
     },
-    "digitalArt": {
-      "title": "Rəqəmsal Sənət",
-      "description": "Rəqəmsal sənət kolleksiyamıza baxın"
-    },
-    "photography": {
-      "title": "Fotoqrafiya",
-      "description": "Seçilmiş fotoqrafiya əsərlərimizə baxın"
-    },
-    "ceramics": {
-      "title": "Keramika",
-      "description": "Keramika sənət əsərlərimizi kəşf edin"
+    "mozaics": {
+      "title": "Mozaikalar",
+      "description": "Möhtəşəm mozaikalar kolleksiyamızı kəşf edin"
     }
   },
   "product":{
@@ -44,7 +36,8 @@
     "price": "Qiymət",
     "description": "Təsvir",
     "year": "İl",
-    "dimensions": "Ölçülər"
+    "dimensions": "Ölçülər",
+    "clickToEnlarge": "Şəkli böyütmək üçün klikləyin"
   },
   "products": {
     "title": "Məhsullarımız",
@@ -115,18 +108,26 @@
     "new": "Yeni",
     "shipping": "Çatdırılma",
     "worldwide": "Dünya üzrə çatdırılma",
-    "categories": {
-      "paintings": "Rəsm əsərləri",
-      "paintingsDescription": "Dünyanın hər yerindən istedadlı rəssamların unikal rəsm əsərlərinin kolleksiyasını kəşf edin.",
-      "sculptures": "Heykəllər",
-      "sculpturesDescription": "İstedadlı sənətkarların unikal heykəllərinin kolleksiyasını kəşf edin.",
-      "digitalArt": "Rəqəmsal Sənət",
-      "digitalArtDescription": "Rəqəmsal sənət əsərlərimizin kolleksiyası ilə rəqəmsal yaradıcılıq dünyasını kəşf edin.",
-      "photography": "Fotoqrafiya",
-      "photographyDescription": "Professional fotoqrafların gözəl fotoşəkillərinin kolleksiyasını baxın.",
-      "ceramics": "Keramika",
-      "ceramicsDescription": "Bacarıqlı sənətkarların əl işi keramika məhsullarının kolleksiyasını kəşf edin."
-    }
+   "categories": {
+  "all": "Bütün kateqoriyalar",
+  "paintings": {
+    "title": "Rəsm əsərləri",
+    "description": "Unikal rəsm əsərlərindən ibarət kolleksiyamızı kəşf edin"
+  },
+  "sculptures": {
+    "title": "Heykəllər",
+    "description": "Əl işi heykəllərimizi kəşf edin"
+  },
+  "mozaics": {
+    "title": "Mozaikalar",
+    "description": "Möhtəşəm mozaikalar kolleksiyamızı kəşf edin"
+  },
+  "ceramics": {
+    "title": "Keramika",
+    "description": "Keramika incəsənət nümunələrimizi kəşf edin"
+  }
+}
+
   },
   "investor": {
     "title": "Böyüyən Ticarət Mərkəzimizə Qoşulun",
@@ -140,7 +141,7 @@
     "questions": {
       "shipping": {
         "question": "Çatdırılma seçimləriniz nələrdir?",
-        "answer": "Biz standart və ekspres çatdırılma seçimləri təklif edirik. Standart çatdırılma adətən 5-7 iş günü, ekspres çatdırılma isə 2-3 iş günü çəkir. Beynəlxalq çatdırılma da müxtəlif çatdırılma müddətləri ilə mövcuddur."
+        "answer": "Biz standart və ekspres çatdırılma seçimləri təklif edirik. Standart çatdırılma adətən 5-7 iş günü, ekspres çatdırılma isə 2-3 iş günü çəkir. Beynəlxalq çatdırma da müxtəlif çatdırılma müddətləri ilə mövcuddur."
       },
       "returns": {
         "question": "Qaytarma siyasətiniz nədir?",

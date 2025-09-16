@@ -12,6 +12,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import { Box } from '@mui/material';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import { useLoadingNavigation } from './hooks/useLoadingNavigation';
+ 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Lazy imports
@@ -24,8 +25,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Search = lazy(() => import('./pages/Search'));
 const Paintings = lazy(() => import('./pages/products/Paintings'));
+const Mozaics = lazy(() => import('./pages/products/Mozaics'));
 const Sculptures = lazy(() => import('./pages/products/Sculptures'));
-const Ceramics = lazy(() => import('./pages/products/Ceramics'));
 const Admin = lazy(() => import('./pages/Admin'));
 
 const AppContent: React.FC = () => {
@@ -42,8 +43,9 @@ const AppContent: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/paintings" element={<Paintings />} />
+            <Route path="/products/mozaics" element={<Mozaics />} />
             <Route path="/products/sculptures" element={<Sculptures />} />
-            <Route path="/products/ceramics" element={<Ceramics />} />
+            <Route path="/products/mozaics" element={<CategoryProducts  />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/search" element={<Search />} />
             <Route path="/contact" element={<Contact />} />

@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link as RouterLink } from 'react-router-dom';
-import { Product } from '../types/product';
-import products from '../data/products';
-import { Box, Container, Grid, Typography, Button, Card, CardMedia, Chip, Divider, Paper, Stack } from '@mui/material';
+import { Product } from '../types/product'; // Ensure the `Product` type is correctly exported from this file
+import products from '../data/products'; // Ensure `products` is the default export from this file
+import {
+  Box, Container, Grid, Typography, Button, Card, CardMedia,
+  Chip, Divider, Paper, Stack, Modal
+} from '@mui/material'; // Ensure all MUI components are correctly imported
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CategoryIcon from '@mui/icons-material/Category';
 import StraightenIcon from '@mui/icons-material/Straighten';
 import PersonIcon from '@mui/icons-material/Person';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'; // Ensure `useTranslation` is correctly imported
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
   const [selectedImage, setSelectedImage] = useState<string>('');
+  const [imageModalOpen, setImageModalOpen] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -23,6 +27,14 @@ const ProductDetail: React.FC = () => {
     setProduct(foundProduct || null);
     setSelectedImage(foundProduct ? foundProduct.imageUrl : '');
   }, [id]);
+
+  const handleImageClick = () => {
+    setImageModalOpen(true);
+  };
+
+  const handleImageModalClose = () => {
+    setImageModalOpen(false);
+  };
 
   if (!product) {
     return (
@@ -72,17 +84,25 @@ const ProductDetail: React.FC = () => {
     WebkitBackdropFilter: 'blur(16px)',
     boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)',
     border: '1px solid rgba(255, 255, 255, 0.18)',
+    height: '80%',
   }} className='details'>
           <Grid container spacing={4} alignItems="center">
             {/* Image Section */}
             <Grid item xs={12} md={6}>
-              <Box sx={{ mb: 2, borderRadius: 3, overflow: 'hidden', boxShadow: 2 }}>
+              <Box
+                sx={{ mb: 2, borderRadius: 3, overflow: 'hidden', boxShadow: 2 }}
+                onClick={handleImageClick}
+                style={{ cursor: 'pointer' }}
+              >
                 <CardMedia
                   component="img"
                   image={selectedImage}
                   alt={product.title}
-                  sx={{ width: '100%', height: 400, objectFit: 'cover', borderRadius: 3 }}
+                  sx={{ width: '100%', height: 600, objectFit: 'cover', borderRadius: 3}}
                 />
+                <Typography sx={{ textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'var(--secondary-main)', padding: '0.5rem 0' }}>
+                  {t('product.clickToEnlarge', 'Click image to enlarge')}
+                </Typography>
               </Box>
               {/* Image Gallery Thumbnails */}
             
@@ -129,8 +149,31 @@ const ProductDetail: React.FC = () => {
           </Grid>
         </Card>
       </Container>
+
+      <Modal open={imageModalOpen} onClose={handleImageModalClose}>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 2,
+            maxWidth: '90%',
+            maxHeight: '90%',
+            overflow: 'auto',
+          }}
+        >
+          <img
+            src={selectedImage}
+            alt="Product"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </Box>
+      </Modal>
     </Box>
   );
 };
 
-export default ProductDetail; 
+export default ProductDetail;

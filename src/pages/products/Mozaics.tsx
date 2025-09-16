@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   Box, 
   Container, 
@@ -13,27 +13,24 @@ import { Product } from '../../types/product';
 import ProductCard from '../../components/ProductCard';
 import ProductFilters from '../../components/ProductFilters';
 import { useTranslation } from 'react-i18next';
-import ceramicsBg from '../../images/categories/ceramics.jpg';
+import mozaicsBg from '../../images/categories/mozaik.jpg';
 
-const Ceramics: React.FC = () => {
+const Mozaics: React.FC = () => {
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   // State for products and loading
-  const [products, setProducts] = useState<Product[]>(productsData.filter((product) => product.category === 'ceramics'));
-  const [loading, setLoading] = useState(false);
-
-  // Filter states
+  const [products] = useState<Product[]>(
+    productsData.filter((product) => product.category === 'mozaics')
+  );
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('title');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 600]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
   const [currentPage, setCurrentPage] = useState(1);
   const [filterOpen, setFilterOpen] = useState(false);
 
   const productsPerPage = 12;
-
-  // Remove useEffect for fetching products
 
   // Calculate max price for the slider
   const maxPrice = Math.max(...products.map(p => p.price), 600);
@@ -95,6 +92,17 @@ const Ceramics: React.FC = () => {
     setCurrentPage(1);
   };
 
+  // Add debugging logs to check the state of products, searchQuery, and priceRange
+  console.log('Mozaics Page - Products:', products);
+  console.log('Mozaics Page - Search Query:', searchQuery);
+  console.log('Mozaics Page - Price Range:', priceRange);
+
+  // Add detailed debugging logs
+  console.log('Mozaics Page - Initial Products:', productsData.filter((product) => product.category === 'mozaics'));
+  console.log('Mozaics Page - Filtered Products:', filteredProducts);
+  console.log('Mozaics Page - Current Page:', currentPage);
+  console.log('Mozaics Page - Total Pages:', totalPages);
+
   return (
     <Box sx={{ 
       position: 'relative',
@@ -102,7 +110,7 @@ const Ceramics: React.FC = () => {
       color: 'white',
       paddingTop: '100px',
       paddingBottom: '40px',
-      backgroundImage: `url(${ceramicsBg})`,
+      backgroundImage: `url(${mozaicsBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -130,10 +138,14 @@ const Ceramics: React.FC = () => {
             textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)'
           }}
         >
-          {t('categories.ceramics.title')}
+          {t('categories.mozaics.title')}
         </Typography>
-        <Typography variant="subtitle1" align="center" sx={{ mb: 4, color: 'var(--secondary-main)', textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)' }}>
-          {t('categories.ceramics.description')}
+        <Typography 
+          variant="subtitle1" 
+          align="center" 
+          sx={{ mb: 4, color: 'var(--secondary-main)', textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)' }}
+        >
+          {t('categories.mozaics.description')}
         </Typography>
 
         <Grid container spacing={3}>
@@ -174,7 +186,7 @@ const Ceramics: React.FC = () => {
 
             {filteredProducts.length === 0 ? (
               <Typography align="center" color="text.secondary" sx={{ py: 8 }}>
-                {t('products.noProducts')}
+                No products found. Please adjust your filters or search query.
               </Typography>
             ) : (
               <>
@@ -221,4 +233,4 @@ const Ceramics: React.FC = () => {
   );
 };
 
-export default Ceramics; 
+export default Mozaics;

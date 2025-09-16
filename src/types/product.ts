@@ -3,7 +3,7 @@ export interface Product {
   title: string;
   description: string;
   price: number;
-  category: 'paintings' | 'sculptures' | 'digital-art' | 'photography' | 'ceramics';
+  category: 'paintings' | 'sculptures' | 'digital-art' | 'photography' | 'mozaics';
   imageUrl: string;
   featured: boolean;
   artist: string;

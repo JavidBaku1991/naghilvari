@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {
   Dialog, DialogTitle, DialogContent, DialogActions,
-  TextField, Button, MenuItem, FormControlLabel, Checkbox
+  TextField, Button, MenuItem, FormControlLabel, Checkbox,
+  Modal, Box
 } from '@mui/material';
 
 const categories = [
@@ -28,6 +29,7 @@ const ProductDialog: React.FC<ProductDialogProps> = ({ open, onClose, onSave, in
   const [year, setYear] = useState(initialData?.year || '');
   const [featured, setFeatured] = useState(initialData?.featured || false);
   const [image, setImage] = useState<File | null>(null);
+  const [imageModalOpen, setImageModalOpen] = useState(false);
 
   const handleSave = () => {
     onSave({
@@ -43,96 +45,138 @@ const ProductDialog: React.FC<ProductDialogProps> = ({ open, onClose, onSave, in
     });
   };
 
+  const handleImageClick = () => {
+    if (image) {
+      setImageModalOpen(true);
+    }
+  };
+
+  const handleImageModalClose = () => {
+    setImageModalOpen(false);
+  };
+
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-      <DialogTitle>{initialData ? 'Edit Product' : 'Create Product'}</DialogTitle>
-      <DialogContent>
-        <TextField
-          label="Title"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-          fullWidth
-          required
-          margin="normal"
-        />
-        <TextField
-          label="Description"
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-          fullWidth
-          multiline
-          rows={3}
-          margin="normal"
-        />
-        <TextField
-          label="Price"
-          type="number"
-          value={price}
-          onChange={e => setPrice(e.target.value)}
-          fullWidth
-          required
-          margin="normal"
-        />
-        <TextField
-          label="Category"
-          value={category}
-          onChange={e => setCategory(e.target.value)}
-          select
-          fullWidth
-          required
-          margin="normal"
-        >
-          {categories.map(option => (
-            <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          label="Artist"
-          value={artist}
-          onChange={e => setArtist(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Dimensions"
-          value={dimensions}
-          onChange={e => setDimensions(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Year"
-          type="number"
-          value={year}
-          onChange={e => setYear(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={featured}
-              onChange={e => setFeatured(e.target.checked)}
-            />
-          }
-          label="Featured"
-        />
-        <div style={{ margin: '1rem 0' }}>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={e => setImage(e.target.files?.[0] || null)}
+    <>
+      <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+        <DialogTitle>{initialData ? 'Edit Product' : 'Create Product'}</DialogTitle>
+        <DialogContent>
+          <TextField
+            label="Title"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+            fullWidth
+            required
+            margin="normal"
           />
-        </div>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={onClose} color="secondary">Cancel</Button>
-        <Button onClick={handleSave} variant="contained" color="primary">
-          {initialData ? 'Update' : 'Create'}
-        </Button>
-      </DialogActions>
-    </Dialog>
+          <TextField
+            label="Description"
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+            fullWidth
+            multiline
+            rows={3}
+            margin="normal"
+          />
+          <TextField
+            label="Price"
+            type="number"
+            value={price}
+            onChange={e => setPrice(e.target.value)}
+            fullWidth
+            required
+            margin="normal"
+          />
+          <TextField
+            label="Category"
+            value={category}
+            onChange={e => setCategory(e.target.value)}
+            select
+            fullWidth
+            required
+            margin="normal"
+          >
+            {categories.map(option => (
+              <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
+            ))}
+          </TextField>
+          <TextField
+            label="Artist"
+            value={artist}
+            onChange={e => setArtist(e.target.value)}
+            fullWidth
+            margin="normal"
+          />
+          <TextField
+            label="Dimensions"
+            value={dimensions}
+            onChange={e => setDimensions(e.target.value)}
+            fullWidth
+            margin="normal"
+          />
+          <TextField
+            label="Year"
+            type="number"
+            value={year}
+            onChange={e => setYear(e.target.value)}
+            fullWidth
+            margin="normal"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={featured}
+                onChange={e => setFeatured(e.target.checked)}
+              />
+            }
+            label="Featured"
+          />
+          <div style={{ margin: '1rem 0' }}>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={e => setImage(e.target.files?.[0] || null)}
+            />
+            {image && (
+              <Button onClick={handleImageClick} style={{ marginTop: '0.5rem' }}>
+                View Full Image
+              </Button>
+            )}
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={onClose} color="secondary">Cancel</Button>
+          <Button onClick={handleSave} variant="contained" color="primary">
+            {initialData ? 'Update' : 'Create'}
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      <Modal open={imageModalOpen} onClose={handleImageModalClose}>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 2,
+            maxWidth: '90%',
+            maxHeight: '90%',
+            overflow: 'auto',
+          }}
+        >
+          {image && (
+            <img
+              src={URL.createObjectURL(image)}
+              alt="Product"
+              style={{ width: '100%', height: 'auto' }}
+            />
+          )}
+        </Box>
+      </Modal>
+    </>
   );
 };
 
-export default ProductDialog; 
+export default ProductDialog;

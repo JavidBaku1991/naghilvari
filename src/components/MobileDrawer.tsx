@@ -43,9 +43,8 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ open, onClose, isScrolled =
   const productCategories = [
     { text: 'Paintings', path: '/products/paintings' },
     { text: 'Sculptures', path: '/products/sculptures' },
-    { text: 'Digital Art', path: '/products/digital-art' },
-    { text: 'Photography', path: '/products/photography' },
-    { text: 'Ceramics', path: '/products/ceramics' }
+    { text: 'Mozaics', path: '/products/mozaics' }
+  
   ];
 
   const menuItems = [

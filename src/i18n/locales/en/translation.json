@@ -59,18 +59,23 @@
       "back": "Back",
       "noDescription": "No description available"
     },
-    "categories": {
-      "paintings": "Paintings",
-      "paintingsDescription": "Discover our collection of unique paintings from talented artists around the world.",
-      "sculptures": "Sculptures",
-      "sculpturesDescription": "Explore our collection of unique sculptures from talented artists.",
-      "digitalArt": "Digital Art",
-      "digitalArtDescription": "Explore the world of digital creativity with our collection of digital artworks.",
-      "photography": "Photography",
-      "photographyDescription": "Browse through our collection of stunning photographs from professional photographers.",
-      "ceramics": "Ceramics",
-      "ceramicsDescription": "Explore our collection of handcrafted ceramic pieces from skilled artisans."
-    },
+   "categories": {
+  "all": "All categories",
+  "paintings": {
+    "title": "Paintings",
+    "description": "Explore our collection of unique paintings"
+  },
+  "sculptures": {
+    "title": "Sculptures",
+    "description": "Discover our handmade sculptures"
+  },
+  "mozaics": {
+    "title": "Mosaics",
+    "description": "Explore our collection of stunning mosaics"
+  }
+
+},
+
     "noProducts": "No products found matching your criteria",
     "clearFilters": "Clear all filters",
     "items": {
@@ -240,5 +245,8 @@
   },
    "featuredProducts": {
     "viewAll": "View All"
+  },
+  "product": {
+    "clickToEnlarge": "Click image to enlarge"
   }
-} 
+}
