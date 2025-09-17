@@ -27,17 +27,9 @@
       "title": "Sculptures",
       "description": "Discover our handcrafted sculptures"
     },
-    "digitalArt": {
-      "title": "Digital Art",
-      "description": "Browse our digital art collection"
-    },
-    "photography": {
-      "title": "Photography",
-      "description": "View our curated photography works"
-    },
-    "ceramics": {
-      "title": "Ceramics",
-      "description": "Explore our ceramic art pieces"
+ "mozaics": {
+      "title": "Mosaics",
+      "description": "Explore our collection of stunning mosaics"
     }
   },
   "products": {
