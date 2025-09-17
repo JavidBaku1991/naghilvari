@@ -37,7 +37,34 @@ const AppContent: React.FC = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '4rem' }}>Loading...</div>}>
+       <Suspense
+  fallback={
+    <div style={{ textAlign: "center", marginTop: "4rem" }}>
+      <span
+        style={{
+          fontSize: "1.5rem",
+          fontWeight: "bold",
+          color: "var(--secondary-main)",
+          display: "inline-block",
+          animation: "pulse 1.5s infinite",
+        }}
+      >
+        Loading...
+      </span>
+
+      <style>
+        {`
+          @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.6; }
+          }
+        `}
+      </style>
+    </div>
+  }
+>
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
