@@ -180,7 +180,9 @@ const Paintings: React.FC = () => {
               <>
                 <Grid container spacing={4}>
                   {paginatedProducts.map(product => (
-                    <Grid item xs={12} sm={6} md={4} key={product.id}>
+                    <Grid item xs={12} sm={6} md={4} key={product.id}
+                    sx={{ display: 'flex', justifyContent: 'center' }}
+                    >
                       <ProductCard product={product} />
                     </Grid>
                   ))}

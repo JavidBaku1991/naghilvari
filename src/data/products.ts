@@ -198,7 +198,7 @@ const products: Product[] = [
     price: 460,
     imageUrl: naturmort,
     category: "paintings",
-    featured: true,
+    featured: false,
     artist: "Hüseyn Hacıyev",
     year: 2014,
     dimensions: "45*50"

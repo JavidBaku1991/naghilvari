@@ -46,7 +46,8 @@ const Navbar: React.FC = () => {
   const productCategories = [
     { label: t('categories.paintings.title'), path: '/products/paintings' },
     { label: t('categories.sculptures.title'), path: '/products/sculptures' },
-    { label: t('categories.mozaics.title'), path: '/products/mozaics' }
+    { label: t('categories.mozaics.title'), path: '/products/mozaics' },
+    { label: t('nav.allProducts'), path: '/products' }
   ];
 
   useEffect(() => {

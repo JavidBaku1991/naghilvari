@@ -346,7 +346,7 @@ const Contact: React.FC = () => {
                     mt: { xs: 2, sm: 3 },
                     py: { xs: 1, sm: 1.5 },
                     backgroundColor: 'var(--secondary-main)',
-                    color: 'black',
+                    color: 'white',
                     fontWeight: 'bold',
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
                     '&:hover': {

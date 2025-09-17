@@ -43,15 +43,17 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ open, onClose, isScrolled =
   const productCategories = [
     { text: 'Paintings', path: '/products/paintings' },
     { text: 'Sculptures', path: '/products/sculptures' },
-    { text: 'Mozaics', path: '/products/mozaics' }
+    { text: 'Mozaics', path: '/products/mozaics' },
+    { text: 'All Products', path: '/products' }
   
   ];
 
   const menuItems = [
-    { text: 'Home', icon: <HomeIcon />, path: '/' },
+     { text: 'FAQ', icon: <HelpIcon />, path: '/faq' },
+     { text: 'Home', icon: <HomeIcon />, path: '/' },
     { text: 'About', icon: <AboutIcon />, path: '/about' },
-    { text: 'Contact', icon: <ContactIcon />, path: '/contact' },
-    { text: 'FAQ', icon: <HelpIcon />, path: '/faq' },
+    { text: 'Contact', icon: <ContactIcon />, path: '/contact' }
+   
   ];
 
   const handleProductsClick = () => {

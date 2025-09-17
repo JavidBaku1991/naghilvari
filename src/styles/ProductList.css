@@ -1,0 +1,17 @@
+/* ...existing code... */
+
+@media (max-width: 600px) {
+  .product-list,
+  .product-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ...existing code... */
