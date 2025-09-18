@@ -45,7 +45,6 @@ const Products: React.FC = () => {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(43, 35, 35, 0.85)',
         zIndex: 0,
       }
     }}>

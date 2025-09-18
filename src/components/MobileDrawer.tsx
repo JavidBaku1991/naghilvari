@@ -49,7 +49,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ open, onClose, isScrolled =
   ];
 
   const menuItems = [
-     { text: 'FAQ', icon: <HelpIcon />, path: '/faq' },
+    //  { text: 'FAQ', icon: <HelpIcon />, path: '/faq' },
      { text: 'Home', icon: <HomeIcon />, path: '/' },
     { text: 'About', icon: <AboutIcon />, path: '/about' },
     { text: 'Contact', icon: <ContactIcon />, path: '/contact' }
@@ -93,10 +93,9 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ open, onClose, isScrolled =
       PaperProps={{
         sx: { 
           width: 280,
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backgroundColor: 'var(--secondary-main)',
           backdropFilter: 'blur(10px)',
           borderRight: '1px solid var(--secondary-main)',
-          backgroundImage: `url(${footerImg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'white',

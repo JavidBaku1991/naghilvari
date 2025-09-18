@@ -7,6 +7,10 @@ body, html, #root {
    margin: 0;
 }
 
+:root {
+  --main: #f7f7f7;
+  --secondary-main: rgb(45,43,44);
+}
 
 .glass{
   backdrop-filter: blur(6px);
@@ -23,10 +27,7 @@ code {
     monospace;
 }
 
-:root {
-  --main: #f7f7f7;
-  --secondary-main: rgb(255,194,43);
-}
+
 
 .bg-left-contact-glass {
   position: absolute;

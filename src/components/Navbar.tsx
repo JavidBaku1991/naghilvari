@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { label: t('nav.about'), path: '/about' },
     { label: t('nav.contact'), path: '/contact' },
-    { label: t('nav.faq'), path: '/faq' }
+    // { label: t('nav.faq'), path: '/faq' }
   ];
 
   const productCategories = [

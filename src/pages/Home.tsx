@@ -224,7 +224,7 @@ const Home: React.FC = () => {
               <img 
                 src={require('../images/logo.png')} 
                 alt="Naghilvari Logo" 
-                style={{ height: 120, width: 'auto', marginTop: 12, marginBottom: 0 }} 
+                style={{ height: 200, width: 'auto', marginTop: 0, marginBottom: 0 }} 
                 draggable={false}
               />
             </Box>
