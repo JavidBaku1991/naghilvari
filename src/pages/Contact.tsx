@@ -83,6 +83,7 @@ const Contact: React.FC = () => {
         backgroundImage: `url(${contactBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -124,9 +125,8 @@ const Contact: React.FC = () => {
                 sx={{
                   width: '100%',
                   height: '85vh',
-                  // backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  backgroundColor: 'rgba(229, 211, 211, 0.8)',
                   maxWidth: { xs: '100%', sm: '500px', md: '100%' },
-                  backgroundImage: ` url(${telegramIcon})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   padding: { xs: '2rem', sm: '2.5rem', md: '3rem' },
@@ -139,9 +139,10 @@ const Contact: React.FC = () => {
                   // textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)',
                   backdropFilter: 'blur(15px)',
                   border: '2px solid rgba(210, 180, 140, 0.3)',
-                  // boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 20px 40px rgba(231, 216, 216, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                   position: 'relative',
                   overflow: 'hidden',
+                  color: 'white'
                  
                 }}
               >
@@ -171,7 +172,7 @@ const Contact: React.FC = () => {
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: { xs: '6px', sm: '8px', md: '10px' }, 
-                  color: 'white',
+                  color: 'var(--secondary-main)',
                   flexWrap: 'wrap',
                   justifyContent: 'center',
                   textAlign: 'center'
