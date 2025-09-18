@@ -206,6 +206,7 @@ const Home: React.FC = () => {
                 sx={{
                   fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem', xl: '3.5rem' },
                   marginBottom: { xs: '0.25rem', sm: '0.5rem', md: '0.75rem', lg: '1rem' },
+                  marginTop: { xs: '0.4rem', sm: '0.7rem', md: '1rem', lg: '1.5rem' },
                   color: 'var(--secondary-main)',
                   textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
                   transform: heroLoaded ? 'translateX(0)' : 'translateX(-100%)',
