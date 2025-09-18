@@ -8,7 +8,6 @@ import footerImg from '../images/footer.jpg';
 import homeBg from '../images/hero.jpg';
 import ceramics from '../images/categories/ceramics.jpg';
 import heroRight from '../images/hero14.png';
-import hero2Img from '../images/hero2.png';
 import bghero from '../images/hero13.png';
 import sculptures from '../images/categories/sculptures.jpg';
 import paintings from '../images/categories/paintings.jpg';
@@ -54,7 +53,7 @@ const Home: React.FC = () => {
 
   // List all images to preload
   const imagesToPreload = [
-    homeBg, hero2Img, footerImg, bghero, categoriesImg, ceramics
+    homeBg,  footerImg, bghero, categoriesImg, ceramics
   ];
   categories.forEach(cat => cat.images.forEach(img => imagesToPreload.push(img.src)));
 
@@ -199,7 +198,7 @@ const Home: React.FC = () => {
                 textAlign: 'center',
                 zIndex: 1000,
                 borderRadius: { xs: '8px', sm: '12px', md: '16px', lg: '20px' },
-                minHeight: { xs: '180px', sm: '200px' },
+                minHeight: { xs: '180px', sm: '350px' },
               }}
             >
               <Typography
@@ -220,11 +219,12 @@ const Home: React.FC = () => {
                 }}
               >
                 {t('home.welcome')}
+                
               </Typography>
               <img 
                 src={require('../images/logo.png')} 
                 alt="Naghilvari Logo" 
-                style={{ height: 200, width: 'auto', marginTop: 0, marginBottom: 0 }} 
+                style={{ height: 200, width: 'auto', marginTop: 0, marginBottom: 0 ,scale: '1.3'}} 
                 draggable={false}
               />
             </Box>
@@ -238,39 +238,7 @@ const Home: React.FC = () => {
               onLoad={() => setHeroImgLoaded(true)}
               draggable={false}
             />
-            {heroLoaded && (
-              <Box
-                className="hero-image"
-                sx={{
-                  position: 'absolute',
-                  width: { xs: '90%', sm: '85%', md: '80%', lg: '70%' },
-                  height: { xs: '50%', sm: '60%', md: '70%', lg: '75%' },
-                  bottom: { xs: '2%', sm: '5%', md: '8%', lg: '10%' },
-                  left: { xs: '5%', sm: '7.5%', md: '10%', lg: '23%' },
-                  transform: heroLoaded ? 'translateX(0)' : 'translateX(100%)',
-                  transition: 'transform 2s ease-in-out',
-                  background: 'rgba(255, 255, 255, 0.25)',
-                  boxShadow: '0 8px 32px 0 rgba(246, 246, 246, 0.37)',
-                  backdropFilter: 'blur(9.5px)',
-                  WebkitBackdropFilter: 'blur(8.5px)',
-                  borderRadius: { xs: '8px', sm: '12px', md: '16px', lg: '30px' },
-                  display: { xs: 'none', sm: 'block' }, // Hide on very small screens
-                  minHeight: { sm: '200px', md: '250px' },
-                }}
-              >
-                <img 
-                  src={heroRight} 
-                  alt="Hero" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover', 
-                    borderRadius: 'inherit' 
-                  }} 
-                  draggable={false}
-                />
-              </Box>
-            )}
+          
           </Box>
 
   

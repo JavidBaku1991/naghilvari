@@ -12,7 +12,8 @@ const About: React.FC = () => {
       sx={{
         position: 'relative',
         minHeight: 'calc(100vh - 64px)',
-        pt: { xs: '80px', md: '100px' },
+                boxShadow: 'inset 1px 63px 7px 0px rgba(255, 255, 255, 0.9)',
+       pt: { xs: '80px', md: '100px' },
         pb: { xs: '30px', md: '40px' },
         backgroundImage: `url(${about})`,
         backgroundSize: 'cover',
@@ -24,7 +25,6 @@ const About: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(21, 17, 17, 0.85)',
           zIndex: 0,
         },
       }}
@@ -36,7 +36,6 @@ const About: React.FC = () => {
           sx={{
             mb: 5,
             color: 'var(--secondary-main)',
-            textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)',
             fontWeight: 'bold',
             fontSize: { xs: '1.8rem', md: '2.5rem' }
           }}
@@ -57,8 +56,7 @@ const About: React.FC = () => {
             boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
             backdropFilter: 'blur(5px)',
             WebkitBackdropFilter: 'blur(5px)',
-            border: '1px solid rgba(255, 255, 255, 0.3)',
-            textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)',
+            border: '1px solid rgba(219, 211, 211, 0.3)',
             fontSize: { xs: '0.95rem', md: '1.1rem' }
           }}
         >

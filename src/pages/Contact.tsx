@@ -78,6 +78,8 @@ const Contact: React.FC = () => {
         minHeight: 'calc(100vh - 64px)',
         paddingTop: { xs: '80px', sm: '90px', md: '100px' },
         paddingBottom: { xs: '20px', sm: '30px', md: '40px' },
+                boxShadow: 'inset 1px 63px 7px 0px rgba(255, 255, 255, 0.9)',
+
         backgroundImage: `url(${contactBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -88,7 +90,7 @@ const Contact: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(49, 44, 44, 0.85)',
+          // backgroundColor: 'rgba(49, 44, 44, 0.85)',
           zIndex: 0,
         }
       }}
@@ -122,9 +124,9 @@ const Contact: React.FC = () => {
                 sx={{
                   width: '100%',
                   height: '85vh',
-                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  // backgroundColor: 'rgba(0, 0, 0, 0.8)',
                   maxWidth: { xs: '100%', sm: '500px', md: '100%' },
-                  backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(49, 44, 44, 0.8) 100%), url(${telegramIcon})`,
+                  backgroundImage: ` url(${telegramIcon})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   padding: { xs: '2rem', sm: '2.5rem', md: '3rem' },
@@ -134,10 +136,10 @@ const Contact: React.FC = () => {
                   gap: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
                   alignItems: 'center',
                   justifyContent: 'center',
-                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)',
+                  // textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)',
                   backdropFilter: 'blur(15px)',
                   border: '2px solid rgba(210, 180, 140, 0.3)',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  // boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                   position: 'relative',
                   overflow: 'hidden',
                  
@@ -157,7 +159,7 @@ const Contact: React.FC = () => {
                     variant="h4" 
                     sx={{ 
                       color: 'var(--secondary-main)', 
-                      textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)',
+                      // textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)',
                       fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
                       wordBreak: 'break-word'
                     }}
@@ -169,7 +171,7 @@ const Contact: React.FC = () => {
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: { xs: '6px', sm: '8px', md: '10px' }, 
-                  color: 'var(--secondary-main)',
+                  color: 'white',
                   flexWrap: 'wrap',
                   justifyContent: 'center',
                   textAlign: 'center'
@@ -179,7 +181,7 @@ const Contact: React.FC = () => {
                     variant="h4" 
                     sx={{ 
                       color: 'var(--secondary-main)', 
-                      textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)',
+                      // textShadow: '1px 1px 4px rgba(0, 0, 0, 0.8)',
                       fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
                       wordBreak: 'break-word'
                     }}
