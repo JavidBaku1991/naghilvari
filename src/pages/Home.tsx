@@ -198,7 +198,8 @@ const Home: React.FC = () => {
                 textAlign: 'center',
                 zIndex: 1000,
                 borderRadius: { xs: '8px', sm: '12px', md: '16px', lg: '20px' },
-                minHeight: { xs: '180px', sm: '350px' },
+                minHeight: { xs: '180px', sm: '300px' },
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem', lg: '1.2rem' }
               }}
             >
               <Typography

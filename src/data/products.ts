@@ -348,7 +348,7 @@ const products: Product[] = [
     id: "9",
     title: "Gənclərin musiqi məclisi",
     description: "təbii rəng ,akvarel,kağız",
-    price: 12000,
+    price: 1200,
     imageUrl: genclerin,
     category: "paintings",
     featured: true,
